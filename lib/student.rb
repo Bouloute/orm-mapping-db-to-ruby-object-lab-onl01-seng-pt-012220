@@ -73,7 +73,7 @@ class Student
 
   end
 
-  def self.first_X_students(x)
+  def self.plop(x)
     sql = <<-SQL
       SELECT * FROM students LIMIT ?
     SQL
