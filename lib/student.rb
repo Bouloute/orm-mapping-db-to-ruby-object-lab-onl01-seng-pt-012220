@@ -30,7 +30,7 @@ class Student
     SQL
 
     DB[:conn].execute(sql).map {|row|
-      self.new(row)
+      self.new_from_db(row)
     }
   end
 
@@ -40,7 +40,7 @@ class Student
     SQL
 
     DB[:conn].execute(sql).map {|row|
-      self.new(row)
+      self.new_from_db(row)
     }
   end
 
