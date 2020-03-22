@@ -39,7 +39,9 @@ class Student
       SELECT * FROM students WHERE grade <= 11
     SQL
 
-    DB[:conn].execute(sql)
+    DB[:conn].execute(sql).map {|row|
+      self.new(row[1], row[2], row[0])
+    }
   end
 
   def save
