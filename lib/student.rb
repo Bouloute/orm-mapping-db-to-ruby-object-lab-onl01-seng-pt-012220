@@ -21,7 +21,7 @@ class Student
     SQL
 
     bob = DB[:conn].execute(sql, name)
-    binding.pry
+    self.new_from_db(bob)
   end
 
   def save
