@@ -1,9 +1,14 @@
 class Student
   attr_accessor :id, :name, :grade
 
+  def initialize(name, grade, id=nil)
+    @name = name
+    @grade = grade
+    @id = id
+  end
+  
   def self.new_from_db(row)
-    binding.pry
-    # create a new Student object given a row from the database
+    self.new(row[1], row[2], row[0])
   end
 
   def self.all
