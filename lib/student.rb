@@ -29,7 +29,9 @@ class Student
       SELECT * FROM students WHERE GRADE = 9
     SQL
 
-    DB[:conn].execute(sql)
+    DB[:conn].execute(sql).map {|row|
+      self.new(row[1], row[2], row[0])
+    }
   end
 
   def self.students_below_12th_grade
