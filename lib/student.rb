@@ -70,7 +70,7 @@ class Student
     SQL
 
     self.new_from_db(DB[:conn].execute(sql)[0])
-    
+
   end
 
   def self.first_X_students(x)
