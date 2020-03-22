@@ -70,12 +70,11 @@ class Student
     SQL
 
     self.new_from_db(DB[:conn].execute(sql)[0])
-
   end
 
-  def self.plop(x)
+  def self.students_in_grade(x)
     sql = <<-SQL
-      SELECT * FROM students LIMIT ?
+      SELECT * FROM students WHERE grade = ?
     SQL
 
     DB[:conn].execute(sql, x).map {|row|
